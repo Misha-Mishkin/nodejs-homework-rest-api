@@ -6,8 +6,8 @@ const { ctrlWrapper } = require("../../helpers");
 
 const router = express.Router();
 
-router.post("/register", ctrlWrapper(ctrl.register));
+router.post("/signup", ctrlWrapper(ctrl.signup));
 
-router.post("/login", ctrlWrapper(ctrl.login))
+router.post("/login", ctrlWrapper(ctrl.login));
 
 module.exports = router;
