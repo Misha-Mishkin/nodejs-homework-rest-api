@@ -23,6 +23,10 @@ const userSchema = new Schema(
       enum: ["starter", "pro", "business"],
       default: "starter",
     },
+    avatarURL: {
+      type: String,
+      required: true,
+    },
     token: {
       type: String,
       default: null,
@@ -40,7 +44,7 @@ userSchema.methods.validatePassword = function (password) {
 const signupSchema = Joi.object({
   email: Joi.string().required(),
   password: Joi.string().min(6).required(),
-  repeat_password: Joi.ref("password"),
+  repeatPassword: Joi.ref("password"),
 });
 
 const loginSchema = Joi.object({
